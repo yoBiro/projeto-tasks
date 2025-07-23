@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Routine with Biro</title>
+</head>
+<body>
+    <header>
+        <h1>Tasks4Tasks</h1>
+        <hr>
+        <p>Gerencie, Classifique e se Organize. <b>Alinhe suas idéias aqui.</b></p>
+    </header>
+
+    <main>
+        <section id="task-container">
+            <h2>Suas Tarefas</h2>
+            <div id="task-card-container">
+                <div class="task-card-content">
+                    <h4 id="task-name">NomeTarefa</h4>
+                    <data id="task-date">Data: 01/01/2023</data>
+                    <p id="task-description">Descrição da tarefa.</p>
+                    <p id="task-priority">Prioridade: <span class="priority">Alta</span></p>
+                    <p id="task-status">Status: <span class="status">A Fazer</span></p>
+                    <button id="task-delete-button">Excluir</button>
+                    <button id="task-edit-button">Editar</button>
+                </div>
+            </div>
+
+
+            <button id="add-task-button" data-modal="modal-1" onclick="openModal()">Adicionar Tarefa</button>
+            <dialog id="modal-1">
+                <form id="form-container" method="dialog">
+                    <h3 class="form-text">Adicionar Nova Tarefa</h3>
+                    <label for="task-name-input">Nome da Tarefa:</label>
+                    <input type="text" id="task-name-input" required>
+                    
+                    <label for="task-date-input">Data:</label>
+                    <input type="date" id="task-date-input" required>
+                    
+                    <label for="task-description-input">Descrição:</label>
+                    <textarea id="task-description-input" required></textarea>
+                    
+                    <label for="task-priority-input">Prioridade:</label>
+                    <select id="task-priority-input" required>
+                        <option id="option-low" value="low">Baixa</option>
+                        <option id="option-medium" value="medium">Média</option>
+                        <option id="option-high" value="high">Alta</option>
+                    </select>
+
+                    <label for="task-status-input">Status:</label>
+                    <select id="task-status-input" required>    
+                        <option id="todo" value="todo">A Fazer</option>
+                        <option id="in-progress" value="in-progress">Em Progresso</option>
+                        <option id="done" value="done">Concluída</option>
+                    </select>
+
+                    <button type="submit" id="save-task-button">Salvar</button>
+                    <button id="cancel-button" type="button" onclick="closeModal()">Cancelar</button>
+                </form>
+            </dialog>
+        </section>
+    </main>
+
+    <script src="./scripts/index.js"></script>
+</body>
+</html>
